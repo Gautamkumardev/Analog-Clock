@@ -1,0 +1,170 @@
+
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #091921;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  transition: background-color 300ms;
+}
+body.light {
+     background: #efefef;
+}
+.clock {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 250px;
+  height:250px;
+  display: block;
+  border-radius: 50%;
+box-shadow:  5px 5px 19px #061015,
+             -5px -5px 19px #0c222d;
+transition: box-shadow 300ms;
+}
+body.light > .clock {
+box-shadow:  8px 8px 16px #dedede,
+             -8px -8px 16px #ffffff;
+             
+}
+ 
+.img {
+  height: 100%;
+  width: 100%;
+  background-image: url('/clock.png');
+  background-size: contain;
+  z-index: -9;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.hands {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  
+}
+.hands::before{
+  content:"";
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 8px;
+  height: 8px;
+  background-color: #f01f92;
+  border-radius: 50%;
+}
+.hands::after{
+  content:"";
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 3px;
+  height: 3px;
+  background-color: #091921;
+  border-radius: 50%;
+  border: 1px solid #fff;
+
+}
+.hand {
+  position: absolute;
+  display:block;
+  bottom: 50%;
+  right: 50%;
+  transform: translate(50%);
+  transition: none;
+  transform-origin: 50%  100%;
+  border-radius:50px 50px 0 0;
+  transform
+}
+
+#hour {
+  width: 8px;
+  height: 12%;
+  background-color: #f01f92;
+  
+}
+#min  {
+  width: 3px;
+  height: 24%;
+  background-color: #FFF;
+  transition: background-color 300ms;
+}
+.light #min {
+     background-color: #091921;
+}
+
+#sec {
+  width: 0.7px;
+  height: 35%;
+  background-color: #148dde;
+  
+}
+#sec::before {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom:-10px;
+  left: 0px;
+  background: inherit;
+  width: 0.7px;
+  height:20px;
+}
+
+.switch {
+
+     width: 50px;
+     height: 50px;
+     margin: 4vw;
+     overflow: hidden;
+     border-radius: 50%;
+     box-shadow:  1px 1px 6px #061015,
+             -1px -1px 6px #0c222d;
+transition: box-shadow 300ms;
+     
+}
+.light .switch {
+     box-shadow:  1px 1px 2px #dedede,
+             -1px -1px 2px #ffffff;
+        
+}
+.switch > div {
+     margin: 0;
+     padding: 0;
+     display: block;
+     width: 50px;
+     height: 50px;
+     position: relative;
+     top:0;
+     transition: top 300ms ease-in;
+     border-radius: 50%;
+     
+}
+
+
+ svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    
+}
+.switch > .light {
+     top:-100%!important;
+}
+.switch > #night{
+     color: #fefefe;
+     
+     
+}
+.switch > #day {
+     color: #FFE484;
+     
+}
